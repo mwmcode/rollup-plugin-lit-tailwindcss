@@ -19,14 +19,14 @@ function postcssTw(purgeFile) {
 const defaultOptions = {
   include: undefined,
   exclude: undefined,
-  placeholderKeyword: 'TW_CLASSES_PLACEHOLDER',
+  placeholder: undefined,
 };
 
 export default function litTailwindcss(options = defaultOptions) {
-  if (!options.include) throw new Error('missing "include" option');
+  if (!options.include || !options.placeholder) {
+    throw new Error('Both "include" & "placeholder" options are required');
+  }
   const filter = createFilter(options.include, options.exclude);
-  const twPlaceholder =
-    options.placeholderKeyword || defaultOptions.placeholderKeyword;
 
   return {
     name: 'lit-tailwindcss',
@@ -34,9 +34,9 @@ export default function litTailwindcss(options = defaultOptions) {
     transform(code, id) {
       if (!filter(id)) return;
 
-      if (code.includes(twPlaceholder)) {
+      if (code.includes(options.placeholder)) {
         return postcssTw(id).then((result) =>
-          result.css ? code.replace(twPlaceholder, result.css) : null,
+          result.css ? code.replace(options.placeholder, result.css) : null,
         );
       }
       return null;
