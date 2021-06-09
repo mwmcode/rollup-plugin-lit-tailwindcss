@@ -1,11 +1,12 @@
 {
   "name": "rollup-plugin-lit-tailwindcss",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "inject tailwindcss class into lit css tag",
   "main": "dist/rollup-plugin-lit-tailwindcss.cjs.js",
   "module": "dist/rollup-plugin-lit-tailwindcss.es.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "semantic-release": "semantic-release --branches main"
   },
   "keywords": [
     "rollup",
@@ -27,6 +28,11 @@
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.0",
     "rollup": "^2.50.6",
-    "tailwindcss": "^2.1.4"
+    "tailwindcss": "^2.1.4",
+    "semantic-release": "^17.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcha-dev/lit-tailwindcss.git"
   }
 }
