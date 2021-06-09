@@ -1,0 +1,32 @@
+{
+  "name": "rollup-plugin-lit-tailwindcss",
+  "version": "0.0.0",
+  "description": "inject tailwindcss class into lit css tag",
+  "main": "dist/rollup-plugin-lit-tailwindcss.cjs.js",
+  "module": "dist/rollup-plugin-lit-tailwindcss.es.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "rollup",
+    "plugin",
+    "lit",
+    "tailwindcss"
+  ],
+  "author": "mcha",
+  "license": "MIT",
+  "peerDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.0",
+    "rollup": "^1.20.0 || ^2.0.0",
+    "tailwindcss": "^2.1.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/pluginutils": "^4.1.0",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.0",
+    "rollup": "^2.50.6",
+    "tailwindcss": "^2.1.4"
+  }
+}
