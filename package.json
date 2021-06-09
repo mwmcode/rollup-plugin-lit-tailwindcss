@@ -4,6 +4,12 @@
   "description": "inject tailwindcss class into lit css tag",
   "main": "dist/rollup-plugin-lit-tailwindcss.cjs.js",
   "module": "dist/rollup-plugin-lit-tailwindcss.es.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "build": "rollup -c",
     "semantic-release": "semantic-release --branches main"
@@ -34,5 +40,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mcha-dev/lit-tailwindcss.git"
-  }
+  },
+  "homepage": "https://github.com/mcha-dev/lit-tailwindcss"
 }
