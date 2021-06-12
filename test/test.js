@@ -1,6 +1,6 @@
 const test = require('ava');
 const rollup = require('rollup');
-cosnt { getCode } = require('../helpers');
+const { getCode } = require('../helpers');
 const litTw = require('..');
 
 process.chdir(__dirname);
