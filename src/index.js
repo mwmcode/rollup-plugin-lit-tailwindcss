@@ -6,7 +6,7 @@ import autoprefixer from 'autoprefixer';
 function postcssTw(purgeFile) {
   const processors = [
     tailwindcss({
-      config: { mode: 'jit', purge: [purgeFile], separator: '_' },
+      config: { mode: 'jit', purge: [purgeFile], separator: ':' },
     }),
     autoprefixer,
   ];
@@ -36,7 +36,12 @@ export default function litTailwindcss(options = defaultOptions) {
 
       if (code.includes(options.placeholder)) {
         return postcssTw(id).then((result) =>
-          result.css ? code.replace(options.placeholder, result.css) : null,
+          result.css
+            ? code.replace(
+                options.placeholder,
+                result.css.replaceAll(':', '\\:'),
+              )
+            : null,
         );
       }
       return null;
