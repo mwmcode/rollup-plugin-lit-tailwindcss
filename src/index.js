@@ -4,13 +4,13 @@ import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 
 function postcssTw(purgeFile) {
-  const processors = [
+  const plugins = [
     tailwindcss({
       config: { mode: 'jit', purge: [purgeFile], separator: ':' },
     }),
     autoprefixer,
   ];
-  return postcss(processors).process('@tailwind utilities;', {
+  return postcss(plugins).process('@tailwind utilities;', {
     from: undefined,
     to: undefined,
   });
@@ -33,16 +33,16 @@ export default function litTailwindcss(options = defaultOptions) {
 
     transform(code, id) {
       if (!filter(id)) return;
-
       if (code.includes(options.placeholder)) {
-        return postcssTw(id).then((result) =>
-          result.css
-            ? code.replace(
-                options.placeholder,
-                result.css.replaceAll(':', '\\:'),
-              )
-            : null,
-        );
+        return postcssTw(id).then((result) => {
+          if (result.css) {
+            return code.replace(
+              options.placeholder,
+              result.css.replaceAll(':', '\\:'),
+            );
+          }
+          return null;
+        });
       }
       return null;
     },

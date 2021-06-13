@@ -1,7 +1,7 @@
 # rollup-plugin-lit-tailwindcss
 
 ```js
-import litTw from 'rollup-plugin-lit-tailwindcss';
+import litTailwind from 'rollup-plugin-lit-tailwindcss';
 
 export default {
   input: 'src/index.ts',
@@ -9,33 +9,36 @@ export default {
     dir: 'dist',
   },
   plugins: [
-    litTw({
+    litTailwind({
       include: 'src/components/**/*.ts',
       placeholder: 'tw_placeholder',
+      placeholder: undefined,
     }),
   ],
 };
 ```
 
-lit component
+Then in `lit` component file:
 
 ```ts
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-@customElement('simple-component')
+@customElement('simple-footer')
 export class SimpleComponent extends LitElement {
-  static styles = css`tw_placeholder`;
+  static styles = css`tw_placeholder`; // 👈 classes will be injected here
 
   render() {
-    return html`<h1 class="text-purple-400 hover_text-green-500">Hello, world!</h1>`;
+    return html`<h1
+      class="text-purple-400 md:text-red-400 md:hover:text-green-500"
+    >
+      Hello, world!
+    </h1>`;
   }
 }
 ```
 
-## Todos
-
+## Todo
 - is this performant???
-- tailwind separator (`_` to default one `:`)
 - read tailwind config, styles.css?
 - ...
