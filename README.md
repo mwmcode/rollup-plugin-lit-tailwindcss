@@ -38,5 +38,3 @@ export class SimpleComponent extends LitElement {
 }
 ```
 
-
-[LICENCE](LICENCE)
