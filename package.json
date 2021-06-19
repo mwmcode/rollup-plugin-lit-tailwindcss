@@ -25,9 +25,9 @@
   "license": "MIT",
   "peerDependencies": {
     "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.0",
+    "postcss": "^8.3.5",
     "rollup": "^1.20.0 || ^2.0.0",
-    "tailwindcss": "^2.1.4"
+    "tailwindcss": "^2.2.2"
   },
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.3",
@@ -35,10 +35,10 @@
     "autoprefixer": "^10.2.6",
     "ava": "^3.15.0",
     "lit": "^2.0.0-rc.2",
-    "postcss": "^8.3.0",
-    "rollup": "^2.50.6",
-    "semantic-release": "^17.4.3",
-    "tailwindcss": "^2.1.4"
+    "postcss": "^8.3.5",
+    "rollup": "^2.52.1",
+    "semantic-release": "^17.4.4",
+    "tailwindcss": "^2.2.2"
   },
   "repository": {
     "type": "git",
