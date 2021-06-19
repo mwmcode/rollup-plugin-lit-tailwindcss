@@ -38,7 +38,5 @@ export class SimpleComponent extends LitElement {
 }
 ```
 
-## Todo
-- is this performant???
-- read tailwind config, styles.css?
-- ...
+
+[LICENCE](LICENCE)
