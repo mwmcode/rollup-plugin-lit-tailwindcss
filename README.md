@@ -12,7 +12,6 @@ export default {
     litTailwind({
       include: 'src/components/**/*.ts',
       placeholder: 'tw_placeholder',
-      placeholder: undefined,
     }),
   ],
 };
